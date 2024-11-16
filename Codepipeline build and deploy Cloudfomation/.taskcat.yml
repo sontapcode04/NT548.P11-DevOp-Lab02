@@ -1,0 +1,17 @@
+project:
+  name: test-cloudformation
+  regions:
+    - us-east-1
+  s3_bucket: group05-bucket-new
+tests:
+  default:
+    template: ./Lab02Nhom5.yml
+    parameters:
+      VpcCidr: 10.0.0.0/16
+      PublicSubnet1Cidr: 10.0.1.0/24
+      PrivateSubnet1Cidr: 10.0.2.0/24
+      AvailabilityZone1: us-east-1a
+      AmiId: ami-0866a3c8686eaeeba
+      InstanceType: t2.micro
+      KeyName: Keygroup5
+      

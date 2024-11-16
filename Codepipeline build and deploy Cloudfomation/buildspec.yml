@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - pip install cfn-lint 
+      - pip install taskcat
+
+  pre_build:
+    commands:
+      - echo Running cfn-lint to check CloudFormation template...
+      - cfn-lint ./Lab02Nhom5.yml
+
+  build:
+    commands:
+      - echo Running Taskcat tests...
+      - taskcat test run 
+
+artifacts:
+  files:
+    - '**/*'
